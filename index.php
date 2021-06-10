@@ -1,3 +1,13 @@
+<?php
+
+    define('PASTA', 'img/slide/');
+
+    $imgs = scandir(PASTA);
+    array_splice($imgs, 0, 2);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR" id="html">
 <head>
@@ -114,7 +124,9 @@
                             <div class="img first">
                                 <img class="imgs" src="img/slide/projeto-cardapio1.jpg" alt="estudos">
                             </div>
-                            <div class="img">
+
+
+                            <!-- <div class="img">
                                 <img class="imgs" src="img/slide/projeto-cardapio2.png" alt="estudos">
                             </div>
                             <div class="img">
@@ -134,7 +146,7 @@
                             </div>
                             <div class="img">
                                 <img class="imgs" src="img/slide/design4.png" alt="estudos">
-                            </div>
+                            </div> -->
                             <!-- navegação -->
                             <div class="navegacao">
                                 <div class="auto-btn1"></div>
