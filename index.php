@@ -7,6 +7,11 @@
 
     array_splice($_SESSION['imgs'], 0, 2);
 
+    $class = [];
+    foreach($_SESSION['imgs'] as $i => $img){
+        $classe = explode('-', $img);
+        array_push($class, $classe[0]);
+    }
 
 ?>
 
@@ -107,8 +112,8 @@
                     <nav class="menu-slide">
                         <ul>
                             <li class="list on">DESIGN</li>
-                            <li class="list">WEB</li>
                             <li class="list">ESCOLAR</li>
+                            <li class="list">WEB</li>
                         </ul>
                     </nav>
 
@@ -124,7 +129,7 @@
 
                             <?php foreach($_SESSION['imgs'] as $i => $img){ ?>
                                 <div class="img <?php if($i == 0){echo 'first';} ?>">
-                                    <img class="imgs" src="img/slide/<?= $img ?>" alt="estudos">
+                                    <img class="imgs <?= $class[$i] ?>" src="img/slide/<?= $img ?>" alt="estudos">
                                 </div>
                             <?php } ?>
 
@@ -187,7 +192,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/body.js"></script>
+    <script src="js/slide.js"></script>
     <script src="js/responsive.js"></script>
     <script src="js/load.js"></script>
 </body>

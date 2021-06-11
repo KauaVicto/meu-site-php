@@ -40,16 +40,16 @@ function designBtn(){
 }
 function webBtn(){
     list[0].classList.remove('on')
-    list[1].classList.add('on')
-    list[2].classList.remove('on')
+    list[1].classList.remove('on')
+    list[2].classList.add('on')
 
     sele.style.marginRight = '-33px'
     sele.style.width = '56px'
 }
 function escolBtn(){
     list[0].classList.remove('on')
-    list[1].classList.remove('on')
-    list[2].classList.add('on')
+    list[1].classList.add('on')
+    list[2].classList.remove('on')
 
     sele.style.marginRight = '-170px'
     sele.style.width = '56px'
@@ -58,36 +58,34 @@ function escolBtn(){
 
 for(let i = 0;i < radios.length;i++){
     radios[i].addEventListener('click',() => {
-        if(radios[0].checked || radios[1].checked || radios[2].checked){
+        if($(imgs[i]).hasClass("design")){
             designBtn()
-        }else if(radios[3].checked || radios[4].checked){
+        }else if($(imgs[i]).hasClass("web")){
             webBtn()
-        }else if(radios[5].checked || radios[6].checked){
+        }else if($(imgs[i]).hasClass("escolar")){
             escolBtn()
         }
-        count = i + 1
+        count = i
     })
 }
 
 /* Automatic */
 
 setInterval(() => {
-    let radio = document.querySelectorAll('input')
-    radio[count].checked = true
-    count++
-
-    if(count <= 4){
+    radios[count].checked = true
+    
+    if($(imgs[count]).hasClass("design")){
         designBtn()
-    }else if(count <= 6){
+    }else if($(imgs[count]).hasClass("web")){
         webBtn()
-    }else if(count < 8){
+    }else if($(imgs[count]).hasClass("escolar")){
         escolBtn()
     }
+    count++
 
-    if(count >= radio.length - 1){
+    if(count >= radios.length){
         count = 0
     }
-    
 }, 3500)
 
 /* Abrindo img */
