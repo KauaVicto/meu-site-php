@@ -72,7 +72,8 @@ for(let i = 0;i < radios.length;i++){
 /* Automatic */
 
 setInterval(() => {
-    document.getElementById('radio' + count).checked = true
+    let radio = document.querySelectorAll('input')
+    radio[count].checked = true
     count++
 
     if(count <= 4){
@@ -81,8 +82,10 @@ setInterval(() => {
         webBtn()
     }else if(count < 8){
         escolBtn()
-    }else{
-        count = 1
+    }
+
+    if(count >= radio.length - 1){
+        count = 0
     }
     
 }, 3500)

@@ -1,6 +1,6 @@
 <?php
 
-    $divi = 100 / count($_SESSION['imgs']);
+    $qtImg = 100 / count($_SESSION['imgs']);
 
 ?>
 
@@ -63,7 +63,7 @@
 }
 
 .proj .img{
-    width: <?= $divi ?>%;
+    width: <?= $qtImg ?>%;
     transition: 1s all ease;
 }
 
@@ -80,7 +80,7 @@
 .manual{
     position: absolute;
     bottom: 10px;
-    width: 14.28%;
+    width: <?= $qtImg ?>%;
     display: flex;
     justify-content: center;
 }
@@ -116,32 +116,10 @@
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .first{
-        margin-left: <?= -$divi * ($i - 1) ?>%;
+        margin-left: <?= -$qtImg * ($i - 1) ?>%;
     }
 
 <?php } ?>
-
-/* .proj #radio2:checked ~ .first{
-    margin-left: -12.5%;
-}
-.proj #radio3:checked ~ .first{
-    margin-left: -25%;
-}
-.proj #radio4:checked ~ .first{
-    margin-left: -37.5%;
-}
-.proj #radio5:checked ~ .first{
-    margin-left: -50%;
-}
-.proj #radio6:checked ~ .first{
-    margin-left: -62.5%;
-}
-.proj #radio7:checked ~ .first{
-    margin-left: -75%;
-}
-.proj #radio8:checked ~ .first{
-    margin-left: -87.5%;
-} */
 
 /* Automatic */
 
@@ -149,7 +127,7 @@
     position: absolute;
     z-index: 1;
     display: flex;
-    width: 14.28%;
+    width: <?= $qtImg ?>%;
     justify-content: center;
     bottom: 10px;
 }
