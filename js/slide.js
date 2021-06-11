@@ -33,26 +33,26 @@ function designBtn(){
     list[0].classList.add('on')
     list[1].classList.remove('on')
     list[2].classList.remove('on')
-
-    sele.style.marginRight = '139px'
-    sele.style.width = '92px'
-    
 }
 function webBtn(){
     list[0].classList.remove('on')
     list[1].classList.remove('on')
     list[2].classList.add('on')
-
-    sele.style.marginRight = '-33px'
-    sele.style.width = '56px'
 }
 function escolBtn(){
     list[0].classList.remove('on')
     list[1].classList.add('on')
     list[2].classList.remove('on')
+}
+function tamsele(classe){
+    let qtimg = 0
 
-    sele.style.marginRight = '-170px'
-    sele.style.width = '56px'
+    for(let i = 0; i <= imgs.length; i++){
+        if($(imgs[i]).hasClass(classe)){
+            qtimg++
+        }
+    }
+    sele.style.width = (qtimg*34)+'px'
 }
 
 
@@ -60,10 +60,13 @@ for(let i = 0;i < radios.length;i++){
     radios[i].addEventListener('click',() => {
         if($(imgs[i]).hasClass("design")){
             designBtn()
+            tamsele('design')
         }else if($(imgs[i]).hasClass("web")){
             webBtn()
+            tamsele('web')
         }else if($(imgs[i]).hasClass("escolar")){
             escolBtn()
+            tamsele('escolar')
         }
         count = i
     })
