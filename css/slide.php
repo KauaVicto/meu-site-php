@@ -1,3 +1,11 @@
+<?php
+
+    $divi = 100 / count($_SESSION['imgs']);
+
+?>
+
+<style>
+
 .slide{
     width: 30%;
     height: 80%;
@@ -44,7 +52,7 @@
 }
 
 .proj{
-    width: 800%;
+    width: <?= 100 * count($_SESSION['imgs']) ?>%;
     height: 100%;
     display: flex;
     position: relative;
@@ -55,7 +63,7 @@
 }
 
 .proj .img{
-    width: 12.5%;
+    width: <?= $divi ?>%;
     transition: 1s all ease;
 }
 
@@ -105,10 +113,15 @@
     background-color: #FFFFFF;
 }
 
-.proj #radio1:checked ~ .first{
-    margin-left: 0;
-}
-.proj #radio2:checked ~ .first{
+<?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
+
+    .proj <?="#radio$i"?>:checked ~ .first{
+        margin-left: <?= -$divi * ($i - 1) ?>%;
+    }
+
+<?php } ?>
+
+/* .proj #radio2:checked ~ .first{
     margin-left: -12.5%;
 }
 .proj #radio3:checked ~ .first{
@@ -128,7 +141,7 @@
 }
 .proj #radio8:checked ~ .first{
     margin-left: -87.5%;
-}
+} */
 
 /* Automatic */
 
@@ -149,29 +162,11 @@
     margin: 0 10px;
 }
 
-.proj.on #radio1:checked ~ .navegacao .auto-btn1{
-    background-color: #FFFFFF;
-}
-.proj.on #radio2:checked ~ .navegacao .auto-btn2{
-    background-color: #FFFFFF;
-}
+<?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
-.proj.on #radio3:checked ~ .navegacao .auto-btn3{
-    background-color: #FFFFFF;
-}
-.proj.on #radio4:checked ~ .navegacao .auto-btn4{
-    background-color: #FFFFFF;
-}
+    .proj.on <?="#radio$i"?>:checked ~ .navegacao <?= ".auto-btn$i"?> {
+        background-color: #FFFFFF;
+    }
+<?php } ?>
 
-.proj.on #radio5:checked ~ .navegacao .auto-btn5{
-    background-color: #FFFFFF;
-}
-.proj.on #radio6:checked ~ .navegacao .auto-btn6{
-    background-color: #FFFFFF;
-}
-.proj.on #radio7:checked ~ .navegacao .auto-btn7{
-    background-color: #FFFFFF;
-}
-.proj.on #radio8:checked ~ .navegacao .auto-btn8{
-    background-color: #FFFFFF;
-}
+</style>

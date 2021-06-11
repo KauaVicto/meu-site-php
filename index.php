@@ -1,9 +1,11 @@
 <?php
+    session_start();
 
     define('PASTA', 'img/slide/');
 
-    $imgs = scandir(PASTA);
-    array_splice($imgs, 0, 2);
+    $_SESSION['imgs'] = scandir(PASTA);
+
+    array_splice($_SESSION['imgs'], 0, 2);
 
 
 ?>
@@ -15,7 +17,8 @@
     <meta http-equiv="X-UA-Compatible" content="OP=Opera">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/slide.css">
+    <!-- <link rel="stylesheet" media="screen" href="css/slide.css"> -->
+    <?php include('css/slide.php'); ?>
     <title>Rebb_Diit</title>
 </head>
 <body>
@@ -113,13 +116,13 @@
                         <div class="proj on">
                             <!-- botões -->
 
-                            <?php for($i = 1;$i <= count($imgs); $i++){ ?>
+                            <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
                                 <input type="radio" name="radio-btn" id="radio<?=$i?>" class="radio" <?php if($i == 1){echo "checked='true'";} ?> >
                             <?php } ?>
 
                             <!-- images -->
 
-                            <?php foreach($imgs as $i => $img){ ?>
+                            <?php foreach($_SESSION['imgs'] as $i => $img){ ?>
                                 <div class="img <?php if($i == 0){echo 'first';} ?>">
                                     <img class="imgs" src="img/slide/<?= $img ?>" alt="estudos">
                                 </div>
@@ -127,7 +130,7 @@
 
                             <!-- navegação -->
                             <div class="navegacao">
-                                <?php for($i = 1;$i <= count($imgs); $i++){ ?>
+                                <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
                                     <div class="auto-btn<?=$i?>"></div>
                                 <?php } ?>
 
@@ -136,11 +139,11 @@
                             <!-- manual nav -->
                             <div class="manual">
                                 <div id="sele"></div>
-                                <?php for($i = 1;$i <= count($imgs); $i++){ ?>
+                                <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
                                     <label for="radio<?=$i?>" class="manual-btn"></label>
                                 <?php } ?>
                             </div>
-                            
+
                         </div>
 
                     </div>
