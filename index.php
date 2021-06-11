@@ -112,65 +112,35 @@
                     <div class="slider">
                         <div class="proj on">
                             <!-- botões -->
-                            <input type="radio" name="radio-btn" id="radio1" class="radio" checked='true'>
-                            <input type="radio" name="radio-btn" id="radio2" class="radio">
-                            <input type="radio" name="radio-btn" id="radio3" class="radio">
-                            <input type="radio" name="radio-btn" id="radio4" class="radio">
-                            <input type="radio" name="radio-btn" id="radio5" class="radio">
-                            <input type="radio" name="radio-btn" id="radio6" class="radio">
-                            <input type="radio" name="radio-btn" id="radio7" class="radio">
-                            <input type="radio" name="radio-btn" id="radio8" class="radio">
+
+                            <?php for($i = 1;$i <= count($imgs); $i++){ ?>
+                                <input type="radio" name="radio-btn" id="radio<?=$i?>" class="radio" <?php if($i == 1){echo "checked='true'";} ?> >
+                            <?php } ?>
+
                             <!-- images -->
-                            <div class="img first">
-                                <img class="imgs" src="img/slide/projeto-cardapio1.jpg" alt="estudos">
-                            </div>
 
+                            <?php foreach($imgs as $i => $img){ ?>
+                                <div class="img <?php if($i == 0){echo 'first';} ?>">
+                                    <img class="imgs" src="img/slide/<?= $img ?>" alt="estudos">
+                                </div>
+                            <?php } ?>
 
-                            <!-- <div class="img">
-                                <img class="imgs" src="img/slide/projeto-cardapio2.png" alt="estudos">
-                            </div>
-                            <div class="img">
-                                <img class="imgs" src="img/slide/design3.png" alt="estudos">
-                            </div>
-                            <a href="projects/cadastro/index.html" class="img" target="_blank">
-                                <img src="img/slide/projeto-login1.png" alt="estudos">
-                            </a>
-                            <a href="projects/sistema de login/index.html" class="img" target="_blank">
-                                <img src="img/slide/projeto-login2.png" alt="estudos">
-                            </a>
-                            <div class="img">
-                                <img class="imgs" src="img/slide/projeto-escola1.png" alt="estudos">
-                            </div>
-                            <div class="img">
-                                <img class="imgs" src="img/slide/projeto-escola2.png" alt="estudos">
-                            </div>
-                            <div class="img">
-                                <img class="imgs" src="img/slide/design4.png" alt="estudos">
-                            </div> -->
                             <!-- navegação -->
                             <div class="navegacao">
-                                <div class="auto-btn1"></div>
-                                <div class="auto-btn2"></div>
-                                <div class="auto-btn3"></div>
-                                <div class="auto-btn4"></div>
-                                <div class="auto-btn5"></div>
-                                <div class="auto-btn6"></div>
-                                <div class="auto-btn7"></div>
-                                <div class="auto-btn8"></div>
+                                <?php for($i = 1;$i <= count($imgs); $i++){ ?>
+                                    <div class="auto-btn<?=$i?>"></div>
+                                <?php } ?>
+
                             </div>
 
                             <!-- manual nav -->
                             <div class="manual">
                                 <div id="sele"></div>
-                                <label for="radio1" class="manual-btn"></label>
-                                <label for="radio2" class="manual-btn"></label>
-                                <label for="radio3" class="manual-btn"></label>
-                                <label for="radio4" class="manual-btn"></label>
-                                <label for="radio5" class="manual-btn"></label>
-                                <label for="radio6" class="manual-btn"></label>
-                                <label for="radio7" class="manual-btn"></label>
-                                <label for="radio8" class="manual-btn"></label>
+                                <?php for($i = 1;$i <= count($imgs); $i++){ ?>
+                                    <label for="radio<?=$i?>" class="manual-btn"></label>
+                                <?php } ?>
                             </div>
+                            
                         </div>
 
                     </div>
