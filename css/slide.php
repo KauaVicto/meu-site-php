@@ -81,7 +81,7 @@
     position: absolute;
     bottom: 10px;
     width: <?= $qtImg ?>%;
-    height: 30px;
+    height: 28px;
 }
 
 .manual{
@@ -90,7 +90,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-
 }
 
 .manual #sele{
@@ -150,7 +149,7 @@
 
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
-    .proj.on <?="#radio$i"?>:checked ~ .navegacao <?= ".auto-btn$i"?> {
+    .proj.on <?="#radio$i"?>:checked ~ .btns .navegacao <?= ".auto-btn$i"?> {
         background-color: #FFFFFF;
     }
 <?php } ?>

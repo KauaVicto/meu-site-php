@@ -5,6 +5,8 @@ const radios = document.getElementsByClassName('radio')
 const sele = document.getElementById('sele')
 const imgs = document.getElementsByClassName('imgs')
 
+tamsele('design', 0)
+
 
 let proj = document.getElementsByClassName('proj')
 
@@ -53,18 +55,20 @@ function clickbtn(classe) {
     }
 }
 
-function tamsele(classe, elem1, elem2) {
+function tamsele(classe, elem1) {
     let qtimg = 0
 
     for (let i = 0; i <= imgs.length; i++) {
         if ($(imgs[i]).hasClass(classe)) {
             qtimg++
             if(qtimg == 1){
-                elem1 = document.querySelector('.auto-btn'+(1)).getBoundingClientRect()
+                elem1 = ($('.auto-btn'+(i+qtimg)).offset().left - 10) - $('.navegacao').offset().left
             }
         }
     }
-    console.log(elem1)
+    //let left = (elem1 + (elem1 + (qtimg * 34)))/2
+
+    sele.style.left = elem1 + 'px'
     sele.style.width = (qtimg * 34) + 'px'
 }
 
@@ -73,17 +77,17 @@ function tamsele(classe, elem1, elem2) {
 
 for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener('click', () => {
-    let elem1 = 0
-    let elem2 = 0
+        let elem1 = 0
+        let elem2 = 0
         if ($(imgs[i]).hasClass("design")) {
             designBtn()
-            tamsele('design', elem1, elem2)
+            tamsele('design', elem1)
         } else if ($(imgs[i]).hasClass("web")) {
             webBtn()
-            tamsele('web', elem1, elem2)
+            tamsele('web', elem1)
         } else if ($(imgs[i]).hasClass("escolar")) {
             escolBtn()
-            tamsele('escolar', elem1, elem2)
+            tamsele('escolar', elem1)
         }
         count = i
     })
