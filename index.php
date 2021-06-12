@@ -2,16 +2,23 @@
     session_start();
 
     define('PASTA', 'img/slide/');
+    $_SESSION['qt1class'] = 0;
 
     $_SESSION['imgs'] = scandir(PASTA);
 
     array_splice($_SESSION['imgs'], 0, 2);
 
+    $numClass = [];
     $class = [];
     foreach($_SESSION['imgs'] as $i => $img){
         $classe = explode('-', $img);
         array_push($class, $classe[0]);
+        array_push($numClass, $classe[1][0]);
+        if($classe[0] == $class[0]){
+            $_SESSION['qt1class']++;
+        }
     }
+    
 
 ?>
 
@@ -122,7 +129,7 @@
                             <!-- botões -->
 
                             <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
-                                <input type="radio" name="radio-btn" id="radio<?=$i?>" class="radio" <?php if($i == 1){echo "checked='true'";} ?> >
+                                <input type="radio" name="radio-btn" id="radio<?=$i?>" class="radio <?php if($numClass[$i-1][0] == 1){echo $class[$i-1];} ?>" <?php if($i == 1){echo "checked='true'";} ?> >
                             <?php } ?>
 
                             <!-- images -->

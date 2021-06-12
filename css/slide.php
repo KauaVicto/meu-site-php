@@ -87,7 +87,7 @@
 
 .manual #sele{
     content: '';
-    width: 92px;
+    width: <?= $_SESSION['qt1class']*34 ?>px;
     height: 20px;
     background-color: rgba(14, 0, 70, 0.582);
     position: absolute;
