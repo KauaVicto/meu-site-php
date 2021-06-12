@@ -1,28 +1,29 @@
 let count = 1
 
-let list = document.getElementsByClassName('list')
-let radios = document.getElementsByClassName('radio')
-let sele = document.getElementById('sele')
-let imgs = document.getElementsByClassName('imgs')
+const list = document.getElementsByClassName('list')
+const radios = document.getElementsByClassName('radio')
+const sele = document.getElementById('sele')
+const imgs = document.getElementsByClassName('imgs')
+
 
 let proj = document.getElementsByClassName('proj')
 
 
 list[0].addEventListener('click', () => {
     designBtn()
-
+    tamsele('design')
     clickbtn('design')
 })
 
 list[1].addEventListener('click', () => {
     escolBtn()
-
+    tamsele('escolar')
     clickbtn('escolar')
 })
 
 list[2].addEventListener('click', () => {
     webBtn()
-
+    tamsele('web')
     clickbtn('web')
 })
 
@@ -52,29 +53,37 @@ function clickbtn(classe) {
     }
 }
 
-function tamsele(classe) {
+function tamsele(classe, elem1, elem2) {
     let qtimg = 0
 
     for (let i = 0; i <= imgs.length; i++) {
         if ($(imgs[i]).hasClass(classe)) {
             qtimg++
+            if(qtimg == 1){
+                elem1 = document.querySelector('.auto-btn'+(1)).getBoundingClientRect()
+            }
         }
     }
+    console.log(elem1)
     sele.style.width = (qtimg * 34) + 'px'
 }
+
+/* MANUAL */
 
 
 for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener('click', () => {
+    let elem1 = 0
+    let elem2 = 0
         if ($(imgs[i]).hasClass("design")) {
             designBtn()
-            tamsele('design')
+            tamsele('design', elem1, elem2)
         } else if ($(imgs[i]).hasClass("web")) {
             webBtn()
-            tamsele('web')
+            tamsele('web', elem1, elem2)
         } else if ($(imgs[i]).hasClass("escolar")) {
             escolBtn()
-            tamsele('escolar')
+            tamsele('escolar', elem1, elem2)
         }
         count = i
     })
@@ -100,7 +109,7 @@ setInterval(() => {
     if (count >= radios.length) {
         count = 0
     }
-}, 4000)
+}, 60000)
 
 /* Abrindo img */
 

@@ -77,12 +77,20 @@
 
 /* manual slide */
 
-.manual{
+.btns{
     position: absolute;
     bottom: 10px;
     width: <?= $qtImg ?>%;
+    height: 30px;
+}
+
+.manual{
+    position: relative;
+    width: <?= $qtImg ?>%;
     display: flex;
     justify-content: center;
+    width: 100%;
+
 }
 
 .manual #sele{
@@ -94,7 +102,7 @@
     z-index: 0;
     top: -3px;
     border-radius: 10px;
-    margin-right: 139px;
+    /* margin-right: 139px; */
     transition: .7s all ease-in-out;
 }
 
@@ -124,12 +132,12 @@
 /* Automatic */
 
 .navegacao{
-    position: absolute;
+    position: relative;
     z-index: 1;
     display: flex;
-    width: <?= $qtImg ?>%;
+    width: 100%;
+    top: 50%;
     justify-content: center;
-    bottom: 10px;
 }
 
 .navegacao div{

@@ -141,19 +141,20 @@
                             <?php } ?>
 
                             <!-- navegação -->
-                            <div class="navegacao">
-                                <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
-                                    <div class="auto-btn<?=$i?>"></div>
-                                <?php } ?>
 
-                            </div>
-
-                            <!-- manual nav -->
-                            <div class="manual">
-                                <div id="sele"></div>
-                                <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
-                                    <label for="radio<?=$i?>" class="manual-btn"></label>
-                                <?php } ?>
+                            <div class="btns">
+                                <div class="navegacao">
+                                    <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
+                                        <div class="auto-btn<?=$i?>"></div>
+                                    <?php } ?>
+                                </div>
+                                <!-- manual nav -->
+                                <div class="manual">
+                                    <div id="sele"></div>
+                                    <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
+                                        <label for="radio<?=$i?>" class="manual-btn"></label>
+                                    <?php } ?>
+                                </div>
                             </div>
 
                         </div>
