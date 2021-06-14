@@ -113,7 +113,7 @@ setInterval(() => {
     if (count >= radios.length) {
         count = 0
     }
-}, 60000)
+}, 4000)
 
 /* Abrindo img */
 
