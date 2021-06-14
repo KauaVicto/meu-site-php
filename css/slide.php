@@ -8,7 +8,7 @@
 
 .slide{
     width: 30%;
-    height: 80%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -17,6 +17,7 @@
 
 .menu-slide{
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .menu-slide ul{
@@ -65,6 +66,7 @@
 .proj .img{
     width: <?= $qtImg ?>%;
     transition: 1s all ease;
+    margin-bottom: 20px;
 }
 
 .proj .img img{
@@ -82,6 +84,7 @@
     bottom: 10px;
     width: <?= $qtImg ?>%;
     height: 28px;
+    margin-top: 20px;
 }
 
 .manual{
@@ -149,7 +152,7 @@
 
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
-    .proj.on <?="#radio$i"?>:checked ~ .btns .navegacao <?= ".auto-btn$i"?> {
+    .proj <?="#radio$i"?>:checked ~ .btns .navegacao <?= ".auto-btn$i"?> {
         background-color: #FFFFFF;
     }
 <?php } ?>

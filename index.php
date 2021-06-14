@@ -34,7 +34,7 @@
     <title>Rebb_Diit</title>
 </head>
 <body>
-    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player>
+    <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player> -->
     <header class="container">
         <div class="logo">
             <span>Rebb<br>Diit</span>
@@ -125,7 +125,7 @@
                     </nav>
 
                     <div class="slider">
-                        <div class="proj on">
+                        <div class="proj">
                             <!-- botões -->
 
                             <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
@@ -202,6 +202,6 @@
     <script src="js/script.js"></script>
     <script src="js/slide.js"></script>
     <script src="js/responsive.js"></script>
-    <script src="js/load.js"></script>
+    <!-- <script src="js/load.js"></script> -->
 </body>
 </html>

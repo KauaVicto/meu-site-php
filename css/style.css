@@ -13,15 +13,13 @@ html{
     font-size: 62.5%;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 body{
     background-image: url("../img/paisagem.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 450vh;
-    position: relative;
+    min-height: 420vh;
     min-width: 100vw;
     overflow-x: hidden;
 }
@@ -39,7 +37,7 @@ body{
 
 header.container{
     width: 100vw;
-    height: 140px;
+    height: 20vh;
     background-color: #0D1F2D;
     display: flex;
     justify-content: space-between;
@@ -130,12 +128,12 @@ main .home{
 
 main .home .titulo{
     background-image: url('../img/paisagem.jpg');
-    height: 50%;
+    height: 40%;
 }
 
 main .home .texto{
     width: 100%;
-    height: 50%;
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -237,15 +235,14 @@ main .projetos{
 
 main .projetos .titulo{
     background-image: url('../img/projetos.jpg');
-    height: 45%;
+    height: 40%;
 }
 
 main .projetos .container{
-    height: 55%;
+    height: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 60%;
 }
 
 main .projetos .texto{
@@ -267,11 +264,11 @@ main .projetos .linha{
     height: 200px;
     background-color: #213886;
     position: absolute;
-    bottom: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     z-index: 0;
+    margin-top: 20vh;
 }
 
 .rodape .texto span{
