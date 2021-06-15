@@ -29,8 +29,7 @@
     <meta http-equiv="X-UA-Compatible" content="OP=Opera">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" media="screen" href="css/slide.css"> -->
-    <?php include('css/slide.php'); ?>
+    <?php include('css/slide-style.php'); ?>
     <title>Rebb_Diit</title>
 </head>
 <body>
