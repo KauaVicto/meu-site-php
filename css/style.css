@@ -80,7 +80,7 @@ header.container{
     padding: 10px;
     text-decoration: none;
     font-size: 1.8rem;
-    font-family: "Roboto";
+    font-family: "Poppins";
     transition: 0.1s all ease-in-out;
 }
 
@@ -175,7 +175,7 @@ main .servicos .container .servico{
     align-items: center;
     background-color: #10A694;
     width: 250px;
-    height: 310px;
+    height: 320px;
     border-radius: 6px;
 }
 
@@ -391,14 +391,13 @@ main .projetos .linha{
 
 @media (max-width: 1140px) {
     header.container .menu nav ul li a{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 1000px) {
     main .home .texto{
         font-size: 1.4rem;
-        width: 70%;
     }
     main .estudos .texto{
         font-size: 1.4rem;
@@ -519,5 +518,11 @@ main .projetos .linha{
         text-align: start;
         font-size: 3.5rem;
         padding: 3rem;
+    }
+}
+
+@media (max-height: 700px) {
+    div.servico{
+        transform: scale(80%, 80%);
     }
 }
