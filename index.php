@@ -119,7 +119,7 @@
                     <nav class="menu-slide">
                         <ul>
                             <li class="list on">DESIGN</li>
-                            <li class="list">ESCOLAR</li>
+                            <li class="list">CURRICULAR</li>
                             <li class="list">WEB</li>
                         </ul>
                     </nav>
