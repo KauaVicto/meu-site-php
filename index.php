@@ -1,13 +1,14 @@
 <?php
     session_start();
-
     define('PASTA', 'img/slide/');
+
+    /* variavel que Verifica a quantidade da primeira classe de imagens */
     $_SESSION['qt1class'] = 0;
-
+    /* Le as imagens na pasta */
     $_SESSION['imgs'] = scandir(PASTA);
-
     array_splice($_SESSION['imgs'], 0, 2);
 
+    /* Separa o nome de cada imagem para obter o nome da classe e conta a quantidade da primeira classe de imagens */
     $numClass = [];
     $class = [];
     foreach($_SESSION['imgs'] as $i => $img){
@@ -142,6 +143,7 @@
                             <!-- navegação -->
 
                             <div class="btns">
+                                <!-- Automática nav -->
                                 <div class="navegacao">
                                     <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
                                         <div class="auto-btn<?=$i?>"></div>

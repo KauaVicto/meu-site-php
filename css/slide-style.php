@@ -1,6 +1,6 @@
 <?php
 
-    $qtImg = 100 / count($_SESSION['imgs']);
+    $qtImg = 100 / count($_SESSION['imgs']); /* Define de quanto em quanto % a img irá rolar */
 
 ?>
 
@@ -53,7 +53,7 @@
 }
 
 .proj{
-    width: <?= 100 * count($_SESSION['imgs']) ?>%;
+    width: <?= 100 * count($_SESSION['imgs']) ?>%; /* Pega a quantidade de imgs e multiplica por 100 para definir o tamanho do slide em % */
     height: 100%;
     display: flex;
     position: relative;
@@ -64,7 +64,7 @@
 }
 
 .proj .img{
-    width: <?= $qtImg ?>%;
+    width: <?= $qtImg ?>%; /* Pega x% do tamanho inteiro do slide para cada img a depender da quantidade delas */
     transition: 1s all ease;
     margin-bottom: 20px;
 }
@@ -82,14 +82,14 @@
 .btns{
     position: absolute;
     bottom: 10px;
-    width: <?= $qtImg ?>%;
+    width: <?= $qtImg ?>%; /* Pega x% do tamanho inteiro do slide para a navegação inferior a depender da quantidade de imgs */
     height: 28px;
     margin-top: 20px;
 }
 
 .manual{
     position: relative;
-    width: <?= $qtImg ?>%;
+    width: <?= $qtImg ?>%; /* Pega x% do tamanho inteiro do slide para a navegação inferior a depender da quantidade de imgs */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -97,14 +97,13 @@
 
 .manual #sele{
     content: '';
-    width: <?= $_SESSION['qt1class']*34 ?>px;
+    width: <?= $_SESSION['qt1class']*34 ?>px; /* Verifica a quantidade de imagens da primeira classe e define a largura do agrupamento na navegação */
     height: 20px;
     background-color: rgba(14, 0, 70, 0.582);
     position: absolute;
     z-index: 0;
     top: -3px;
     border-radius: 10px;
-    /* margin-right: 139px; */
     transition: .7s all ease-in-out;
 }
 
@@ -123,6 +122,7 @@
     background-color: #FFFFFF;
 }
 
+/* Verifica qual img está selecionada e modifica o margin-left */
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .first{
@@ -150,6 +150,7 @@
     margin: 0 10px;
 }
 
+/* Pinta o botão inferior que está selecionado */
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .btns .navegacao <?= ".auto-btn$i"?> {
