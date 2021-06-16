@@ -203,6 +203,6 @@
     <script src="js/script.js"></script>
     <script src="js/slide.js"></script>
     <script src="js/responsive.js"></script>
-    <!-- <script src="js/load.js"></script> -->
+    <script src="js/load.js"></script>
 </body>
 </html>
