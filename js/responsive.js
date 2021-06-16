@@ -1,3 +1,5 @@
+/* Esse script está tornando o menu responsivo para dispositivos menores */
+
 let show = true
 
 const menuSection = document.querySelector('.menu')

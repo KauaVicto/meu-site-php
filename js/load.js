@@ -1,3 +1,5 @@
+/* Da uma tela de loading quando carrega o site */
+
 let html = document.getElementById('html')
 
 $(document).ready(() => {

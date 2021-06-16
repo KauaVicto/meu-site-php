@@ -1,16 +1,17 @@
+/* CONTROLA TODO O SLIDE */
+
 let count = 1
 
 const list = document.getElementsByClassName('list')
 const radios = document.getElementsByClassName('radio')
 const sele = document.getElementById('sele')
 const imgs = document.getElementsByClassName('imgs')
-
-tamsele('design', 0)
-
-
-let proj = document.getElementsByClassName('proj')
+const proj = document.getElementsByClassName('proj')
 
 
+tamsele('design', 0) /* inicializa na posição certa o agrupamento na navegação */
+
+/* Eventos de click no menu do slide */
 list[0].addEventListener('click', () => {
     designBtn()
     tamsele('design')
@@ -29,6 +30,7 @@ list[2].addEventListener('click', () => {
     clickbtn('web')
 })
 
+/* Funções para mudar de cor os itens do menu do slide */
 function designBtn() {
     list[0].classList.add('on')
     list[1].classList.remove('on')
@@ -45,6 +47,7 @@ function escolBtn() {
     list[2].classList.remove('on')
 }
 
+/* Direciona o slide para a primeira img da classe quando clicado no menu */
 function clickbtn(classe) {
     for (let i = 0; i < radios.length; i++) {
         if ($(radios[i]).hasClass(classe)) {
@@ -55,14 +58,16 @@ function clickbtn(classe) {
     }
 }
 
-function tamsele(classe, elem1) {
+/* Calcula o tamanho e a posição do agrupamento a depender da quantidade de imgs de cada classe */
+function tamsele(classe) {
     let qtimg = 0
+    let elem1 = 0
 
-    for (let i = 0; i <= imgs.length; i++) {
+    for (let i = 0; i <= imgs.length; i++) { // Conta quantas imgs tem na classe atual 
         if ($(imgs[i]).hasClass(classe)) {
             qtimg++
             if(qtimg == 1){
-                elem1 = ($('.auto-btn'+(i+qtimg)).offset().left - 10) - $('.navegacao').offset().left
+                elem1 = ($('.auto-btn'+(i+qtimg)).offset().left - 10) - $('.navegacao').offset().left // verifica a posição do agrupamento
             }
         }
     }
@@ -72,28 +77,25 @@ function tamsele(classe, elem1) {
     sele.style.width = (qtimg * 34) + 'px'
 }
 
-/* MANUAL */
-
+/* NAVEGAÇÃO MANUAL */
 
 for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener('click', () => {
-        let elem1 = 0
-        let elem2 = 0
-        if ($(imgs[i]).hasClass("design")) {
+        if ($(imgs[i]).hasClass("design")) { /* Verifica a classe da img atual e altera o agrupamento e o menu */
             designBtn()
-            tamsele('design', elem1)
+            tamsele('design')
         } else if ($(imgs[i]).hasClass("web")) {
             webBtn()
-            tamsele('web', elem1)
+            tamsele('web')
         } else if ($(imgs[i]).hasClass("escolar")) {
             escolBtn()
-            tamsele('escolar', elem1)
+            tamsele('escolar')
         }
         count = i
     })
 }
 
-/* Automatic */
+/* NAVEGAÇÃO AUTOMÁTICA */
 
 setInterval(() => {
     radios[count].checked = true
@@ -115,7 +117,7 @@ setInterval(() => {
     }
 }, 4000)
 
-/* Abrindo img */
+/* AMPLIANDO A IMG NA TELA */
 
 let img = document.createElement('img')
 
@@ -143,6 +145,7 @@ for (let i = 0; i < imgs.length; i++) {
     })
 }
 
+/* evento para fechar a img */
 
 img.addEventListener('click', () => {
     img.style.opacity = '0'

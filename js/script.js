@@ -1,10 +1,12 @@
-let gmail = document.getElementById('gmail')
-let wpp = document.getElementById('wpp')
+/* Esse script da um ctrl + c automático no número de telefone e email quando clicado */
 
-let cwpp = document.getElementById('cwpp')
-let cgmail = document.getElementById('cgmail')
+const gmail = document.getElementById('gmail')
+const wpp = document.getElementById('wpp')
 
-let text = document.getElementById('copiar')
+const cwpp = document.getElementById('cwpp')
+const cgmail = document.getElementById('cgmail')
+
+const text = document.getElementById('copiar')
 
 gmail.addEventListener('click', function(){
     text.value = "kauavictor259@gmail.com"
