@@ -111,7 +111,7 @@
             </div>
 
             <div class="container conteudo">
-                <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquid repellendus placeat doloremque perspiciatis quisquam. Assumenda atque numquam eius minima minus nihil aperiam harum in, quam, quidem, consequatur sit animi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit vero dolor earum cupiditate ipsa porro sit rerum adipisci odit voluptatum, et facilis est nesciunt eveniet soluta? Repellendus facilis aperiam in.</p>
+                <p class="texto">Esses são alguns dos projetos que desenvolvi. Fiz alguns trabalhos como designer, desenvolvi dois sites como projeto curricular e fiz alguns projetinhos web apenas para praticar.</p>
 
                 <div class="linha"></div>
 
