@@ -150,13 +150,15 @@
     margin: 0 10px;
 }
 
-/* Pinta o botão inferior que está selecionado */
+/* Deixa marcado o botão inferior que está selecionado */
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .btns .navegacao <?= ".auto-btn$i"?> {
         background-color: #FFFFFF;
     }
 <?php } ?>
+
+/* RESPONSIVIDADE */
 
 @media (max-width: 1400px){
     .menu-slide ul li{
