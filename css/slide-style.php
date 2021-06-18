@@ -158,4 +158,10 @@
     }
 <?php } ?>
 
+@media (max-width: 1400px){
+    .menu-slide ul li{
+        font-size: 1.5rem;
+    }
+}
+
 </style>
