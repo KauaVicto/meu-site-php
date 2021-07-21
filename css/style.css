@@ -76,16 +76,22 @@ header.container{
     list-style: none;
 }
 
+.container .menu nav ul li{
+    margin: 0 5px;
+}
+
 .container .menu nav ul li a{
     padding: 10px;
     text-decoration: none;
     font-size: 1.8rem;
     font-family: "Poppins";
-    transition: 0.1s all ease-in-out;
+    transition: .1s all ease-in-out;
+    border-radius: 2px;
 }
 
 .container .menu nav ul li a:hover{
-    border-bottom: 3px solid white;
+    border-bottom: 2px solid white;
+    /* background-color: #0a1a24; */
 }
 
 /* MAIN */
@@ -128,12 +134,12 @@ main .home{
 
 main .home .titulo{
     background-image: url('../img/paisagem.jpg');
-    height: 40%;
+    height: 50%;
 }
 
 main .home .texto{
     width: 100%;
-    height: 60%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
