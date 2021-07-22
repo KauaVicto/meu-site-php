@@ -77,7 +77,11 @@ header.container{
 }
 
 .container .menu nav ul li{
+    position: relative;
     margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container .menu nav ul li a{
@@ -89,10 +93,39 @@ header.container{
     border-radius: 2px;
 }
 
-.container .menu nav ul li a:hover{
-    border-bottom: 2px solid white;
-    /* background-color: #0a1a24; */
+.container .menu nav ul li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #2E688C;
+    transition: .2s all ease-in-out;
 }
+
+.container .menu nav ul li:hover::after{
+    width: 40%;
+}
+
+.container .menu nav ul li::before{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: .4s all ease-in-out;
+}
+
+.container .menu nav ul li:hover::before{
+    width: 40%;
+}
+
+/* .container .menu nav ul li a:hover{
+    border-bottom: 2px solid white;
+    /* background-color: #0a1a24;
+} */
 
 /* MAIN */
 
