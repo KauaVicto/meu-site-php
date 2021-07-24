@@ -31,7 +31,7 @@ body{
 .login{
     height: 700px;
     width: 30vw;
-    border: 2px solid white;
+    margin: 0 auto;
 }
 
 .login h1{
@@ -43,35 +43,82 @@ body{
 
 .login form{
     width: 60%;
-    height: 100%;
     margin: 0 auto;
 }
 
-.login form .input{
+.login form .campos{
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     width: 100%;
     height: 40px;
 }
 
 .login form label{
-    /* position: absolute;
+    position: absolute;
     bottom: 4px;
-    left: 3px; */
-    color: white;
+    left: 3px;
+    color: #767676;
+    opacity: .56;
     font-size: 1.1rem;
-    transition: .5s all ease-in-out;
+    transition: .4s all ease-in-out;
 }
 
 
 .login form input{
-    /* position: absolute;
+    position: absolute;
     bottom: 0;
-    left: 0; */
+    left: 0;
     background: none;
     border-bottom: 2px solid #76767681;
     color: white;
     font-size: 1.1rem;
     width: 100%;
     height: 40px;
+}
+
+.login form #btnlogin{
+    background-color: #04A777;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.login .oulogin{
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.login .oulogin span{
+    color: #767676;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login .oulogin span::before{
+    content: '';
+    background-color: #767676;
+    width: 45%;
+    height: 2px;
+}
+.login .oulogin span::after{
+    content: '';
+    background-color: #767676;
+    width: 45%;
+    height: 2px;
+}
+
+.login #btngoogle{
+    background-color: #C03221;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
 }

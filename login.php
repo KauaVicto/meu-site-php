@@ -13,17 +13,22 @@
             <h1>Log in</h1>
             <form action="login.php" method="post">
 
-                <div class="input">
-                    <label for="login">Login</label>
-                    <input type="text" name="login" id="login">
+                <div class="campos">
+                    <label for="login" class="labellogin">Login</label>
+                    <input type="text" name="login" id="login" class="inputs">
                 </div>
                 
-                <div class="input">
-                    <label for="pass">Senha</label>
-                    <input type="password" name="pass" id="pass">
+                <div class="campos">
+                    <label for="pass" class="labellogin">Senha</label>
+                    <input type="password" name="pass" id="pass" class="inputs">
                 </div>
-                <button type="submit">Log in</button>
+                <button type="submit" id="btnlogin">Log in</button>
+                <div class="oulogin">
+                    <span>ou</span>
+                </div>
+                <div id="btngoogle">Google</div>                
             </form>
+
         </section>
 
         <div class="separador"></div>
@@ -32,5 +37,7 @@
 
         </section>
     </main>
+
+    <script src="js/login.js"></script>
 </body>
 </html>
