@@ -16,9 +16,7 @@ html{
 }
 
 body{
-    background-image: url("../img/paisagem.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #092B45;
     min-height: 420vh;
     min-width: 100vw;
     overflow-x: hidden;
@@ -121,11 +119,6 @@ header.container{
 .container .menu nav ul li:hover::before{
     width: 40%;
 }
-
-/* .container .menu nav ul li a:hover{
-    border-bottom: 2px solid white;
-    /* background-color: #0a1a24;
-} */
 
 /* MAIN */
 
