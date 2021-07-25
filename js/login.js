@@ -1,6 +1,5 @@
 const labellogin = document.getElementsByClassName("labellogin")
 const inputs = document.getElementsByClassName("inputs")
-const btn = document.getElementById("btnlogin")
 
 for(let i = 0;i < inputs.length;i++){
     inputs[i].addEventListener('focus', () => {
