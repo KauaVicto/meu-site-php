@@ -1,3 +1,38 @@
+<?php
+    require_once "database/includes/conectaBD.php";
+    $erro = '';
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $login = filter_input(INPUT_POST, 'login');
+        $senha = sha1(filter_input(INPUT_POST, 'pass'));
+
+        $sql = "SELECT * FROM usuario WHERE login = ? LIMIT 1";
+
+        $prepare = mysqli_prepare($con, $sql);
+        mysqli_stmt_bind_param($prepare, 's', $login);
+        mysqli_stmt_execute($prepare);
+
+        $result = mysqli_stmt_get_result($prepare);
+        $qt = mysqli_num_rows($result);
+
+        if($qt == 1){
+            $usuarioBD = mysqli_fetch_assoc($result);
+
+            if($senha == $usuarioBD["senha"]){
+                $_SESSION['logado'] = true;
+                $_SESSION['usuario'] = $login;
+
+                header("location: index.php");
+            }else{
+                $erro = "Usuário ou senha não conferem!";
+            }
+        }else{
+            $erro = "Usuário não cadastrado no sistema!";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +61,10 @@
                 <div class="oulogin">
                     <span>ou</span>
                 </div>
-                <div id="btngoogle">Google</div>                
+                <div id="btngoogle">Google</div>
+                <?php if($erro){ ?>
+                    <div class="erro"><?=$erro?></div>  
+                <?php } ?>             
             </form>
 
         </section>

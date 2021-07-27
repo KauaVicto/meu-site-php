@@ -4,8 +4,9 @@
     $sql = "CREATE TABLE usuario (
         id INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(40),
+        email VARCHAR(40),
         login VARCHAR(15) NOT NULL,
-        senha VARCHAR(30) NOT NULL
+        senha VARCHAR(100) NOT NULL
     )";
 
     $result = mysqli_query($con, $sql);

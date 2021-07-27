@@ -3,9 +3,11 @@
 
     $nome = "Admin";
     $login = "admin";
+    $email = "admin@gmail.com";
     $senha = sha1("12345");
+    
 
-    $sql = "INSERT INTO usuario(nome, login, senha) VALUES ('$nome', '$login', '$senha')";
+    $sql = "INSERT INTO usuario(nome, login, email, senha) VALUES ('$nome', '$login', '$email', '$senha')";
 
     $result = mysqli_query($con, $sql);
 
