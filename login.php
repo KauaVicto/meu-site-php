@@ -15,7 +15,7 @@
 
                 <div class="campos">
                     <label for="login" class="labellogin">Login</label>
-                    <input type="text" name="login" id="login" class="inputs">
+                    <input type="text" name="login" id="login" class="inputs" autocomplete="off">
                 </div>
                 
                 <div class="campos">
@@ -40,15 +40,15 @@
 
                 <div class="campos">
                     <label for="nome" class="labellogin">Nome</label>
-                    <input type="text" name="nome" id="nome" class="inputs">
+                    <input type="text" name="nome" id="nome" class="inputs" autocomplete="off">
                 </div>
                 <div class="campos">
                     <label for="email" class="labellogin">Email</label>
-                    <input type="email" name="email" id="email" class="inputs">
+                    <input type="email" name="email" id="email" class="inputs" autocomplete="off">
                 </div>
                 <div class="campos">
                     <label for="loginSing" class="labellogin">Login</label>
-                    <input type="text" name="loginSing" id="loginSing" class="inputs">
+                    <input type="text" name="loginSing" id="loginSing" class="inputs" autocomplete="off">
                 </div>
                 <div class="campos">
                     <label for="senhaSing" class="labellogin">Senha</label>
