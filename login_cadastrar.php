@@ -46,8 +46,6 @@
             $nome = '';
             $email = '';
             $loginSing = '';
-            $senhaSing = '';
-            $RsenhaSing = '';
         }
     }
 
