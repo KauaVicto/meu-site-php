@@ -43,6 +43,11 @@
             $errocadastro = 'Não foi possível realizar o cadastro, tente mais tarde!';
         }else{
             $msg = "Usuário cadastrado com sucesso!";
+            $nome = '';
+            $email = '';
+            $loginSing = '';
+            $senhaSing = '';
+            $RsenhaSing = '';
         }
     }
 
