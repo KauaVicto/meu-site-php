@@ -2,6 +2,10 @@
     session_start();
     define('PASTA', 'img/slide/');
 
+    if(!isset($_SESSION['logado']) || $_SESSION['logado'] == false){
+        header("location: login.php");
+    }
+
     /* variavel que Verifica a quantidade da primeira classe de imagens */
     $_SESSION['qt1class'] = 0;
     /* Le as imagens na pasta */
