@@ -47,7 +47,11 @@
                         <li class="li"><a href="#servicos">SERVIÇOS</a></li>
                         <li class="li"><a href="#estudos">ESTUDOS</a></li>
                         <li class="li"><a href="#projetos">PROJETOS</a></li>
-                        <li class="li"><a href="login.php">LOG IN</a></li>
+                        <?php if(!$_SESSION['logado']){?>
+                            <li class="li"><a href="login.php">LOG IN</a></li>
+                        <?php }else{ ?>
+                            <li class="li"><a href="login_sair.php"><?= $_SESSION['login'] ?></a></li>
+                        <?php } ?>
                     </ul>
                 </nav>
                 <div class="Tmenu">

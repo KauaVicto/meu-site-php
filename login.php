@@ -1,34 +1,16 @@
 <?php
     require_once "database/includes/conectaBD.php";
-    $erro = '';
+    $errologin = '';
+    $errocadastro = '';
+    $msg = '';
+    $nome = '';
+    $email = '';
+    $loginSing = '';
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $login = filter_input(INPUT_POST, 'login');
-        $senha = sha1(filter_input(INPUT_POST, 'pass'));
-
-        $sql = "SELECT * FROM usuario WHERE login = ? LIMIT 1";
-
-        $prepare = mysqli_prepare($con, $sql);
-        mysqli_stmt_bind_param($prepare, 's', $login);
-        mysqli_stmt_execute($prepare);
-
-        $result = mysqli_stmt_get_result($prepare);
-        $qt = mysqli_num_rows($result);
-
-        if($qt == 1){
-            $usuarioBD = mysqli_fetch_assoc($result);
-
-            if($senha == $usuarioBD["senha"]){
-                $_SESSION['logado'] = true;
-                $_SESSION['usuario'] = $login;
-
-                header("location: index.php");
-            }else{
-                $erro = "Usuário ou senha não conferem!";
-            }
-        }else{
-            $erro = "Usuário não cadastrado no sistema!";
-        }
+    if(isset($_POST['btn-login'])){
+        require_once "login_entrar.php";
+    }else if(isset($_POST['btn-cadastrar'])){
+        require_once "login_cadastrar.php";
     }
 
 ?>
@@ -42,7 +24,7 @@
     <link rel="stylesheet" href="css/login.css">
     <title>Log in</title>
 </head>
-<body>
+<body onload="carregar()">
     <main class="container">
         <section class="login">
             <h1>Log in</h1>
@@ -57,13 +39,13 @@
                     <label for="pass" class="labellogin">Senha</label>
                     <input type="password" name="pass" id="pass" class="inputs">
                 </div>
-                <button type="submit" id="btnlogin">Log in</button>
+                <input type="submit" id="btnlogin" value="Log in" name="btn-login">
                 <div class="oulogin">
                     <span>ou</span>
                 </div>
                 <div id="btngoogle">Google</div>
-                <?php if($erro){ ?>
-                    <div class="erro"><?=$erro?></div>  
+                <?php if($errologin){ ?>
+                    <div class="erro"><?=$errologin?></div>  
                 <?php } ?>             
             </form>
 
@@ -78,15 +60,15 @@
 
                 <div class="campos">
                     <label for="nome" class="labellogin">Nome</label>
-                    <input type="text" name="nome" id="nome" class="inputs" autocomplete="off">
+                    <input type="text" name="nome" id="nome" class="inputs" value="<?= $nome ?>" autocomplete="off">
                 </div>
                 <div class="campos">
                     <label for="email" class="labellogin">Email</label>
-                    <input type="email" name="email" id="email" class="inputs" autocomplete="off">
+                    <input type="email" name="email" id="email" class="inputs" value="<?= $email ?>" autocomplete="off">
                 </div>
                 <div class="campos">
                     <label for="loginSing" class="labellogin">Login</label>
-                    <input type="text" name="loginSing" id="loginSing" class="inputs" autocomplete="off">
+                    <input type="text" name="loginSing" id="loginSing" class="inputs" value="<?= $loginSing ?>" autocomplete="off">
                 </div>
                 <div class="campos">
                     <label for="senhaSing" class="labellogin">Senha</label>
@@ -96,7 +78,13 @@
                     <label for="RsenhaSing" class="labellogin">Repita a Senha</label>
                     <input type="password" name="RsenhaSing" id="RsenhaSing" class="inputs">
                 </div>
-                <button type="submit" id="btnSing">Sing Up</button>
+                <input type="submit" id="btnSing" value="Sing Up" name="btn-cadastrar">
+                <?php if($errocadastro){ ?>
+                    <div class="erro"><?=$errocadastro?></div>  
+                <?php } ?>
+                <?php if($msg){ ?>
+                    <div class="erro"><?=$msg?></div>  
+                <?php } ?>  
             </form>
         </section>
     </main>
