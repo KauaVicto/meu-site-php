@@ -14,6 +14,8 @@
         $errocadastro = 'O campo Login é obrigatório.';
     }else if($senhaSing == ''){
         $errocadastro = 'O campo Senha é obrigatório.';
+    }else if(strlen($senhaSing) < 8){
+        $errocadastro = 'A senha é necessário ter no mínimo 8 caracters.';
     }else if($senhaSing != $RsenhaSing){
         $errocadastro = 'As senhas não estão iguais.';
     }else{

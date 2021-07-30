@@ -1,6 +1,5 @@
 const labellogin = document.getElementsByClassName("labellogin")
 const inputs = document.getElementsByClassName("inputs")
-const btn_cadastrar = document.getElementById("btnSing")
 
 for(let i = 0;i < inputs.length;i++){
     inputs[i].addEventListener('focus', () => {
@@ -38,5 +37,6 @@ function carregar(){
         }
     }
 }
+
 
 
