@@ -122,3 +122,24 @@ body{
     font-size: 1.3rem;
     cursor: pointer;
 }
+
+/* MENSAGENS DE ERRO E DE SUCESSO */
+
+.login form .erro{
+    background-color: #d41e1eec;
+    margin: 20px 0;
+    padding: 5px;
+    border: 2px solid #ffffff4f;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+.login form .msg{
+    background-color: #00b90f8c;
+    margin: 20px 0;
+    padding: 5px;
+    border: 2px solid #aec0b24f;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}

@@ -1,6 +1,7 @@
 <?php
     require_once "database/includes/conectaBD.php";
     $errologin = '';
+    $login = '';
     $errocadastro = '';
     $msg = '';
     $nome = '';
@@ -32,7 +33,7 @@
 
                 <div class="campos">
                     <label for="login" class="labellogin">Login</label>
-                    <input type="text" name="login" id="login" class="inputs" autocomplete="off">
+                    <input type="text" name="login" id="login" class="inputs" value="<?= $login ?>" autocomplete="off">
                 </div>
                 
                 <div class="campos">
@@ -83,7 +84,7 @@
                     <div class="erro"><?=$errocadastro?></div>  
                 <?php } ?>
                 <?php if($msg){ ?>
-                    <div class="erro"><?=$msg?></div>  
+                    <div class="msg"><?=$msg?></div>  
                 <?php } ?>  
             </form>
         </section>
