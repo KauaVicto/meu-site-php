@@ -47,14 +47,19 @@
             <div class="menu">
                 <nav>
                     <ul>
-                        <li class="li"><a href="#home">HOME</a></li>
-                        <li class="li"><a href="#servicos">SERVIÇOS</a></li>
-                        <li class="li"><a href="#estudos">ESTUDOS</a></li>
-                        <li class="li"><a href="#projetos">PROJETOS</a></li>
-                        <?php if(!$_SESSION['logado']){?>
-                            <li class="li"><a href="login.php">LOG IN</a></li>
-                        <?php }else{ ?>
-                            <li class="li"><a href="login_sair.php"><?= $_SESSION['login'] ?></a></li>
+                        <li class="li li-pri"><a href="#home">HOME</a></li>
+                        <li class="li li-pri"><a href="#servicos">SERVIÇOS</a></li>
+                        <li class="li li-pri"><a href="#estudos">ESTUDOS</a></li>
+                        <li class="li li-pri"><a href="#projetos">PROJETOS</a></li>
+                        <?php if($_SESSION['logado']){?>
+                            <li class="li li-pri menu-drop">
+                                <a href="#"><?= $_SESSION['login'] ?></a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li class="li li-sec"><a href="login_sair.php">Sair</a></li>
+                                    </ul>
+                                </div>
+                            </li>
                         <?php } ?>
                     </ul>
                 </nav>
