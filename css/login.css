@@ -23,13 +23,13 @@ body{
 .separador{
     width: 2px;
     background-color: #767676;
-    height: 700px;
+    height: 70%;
 }
 
 /* LOGIN */
 
 .login{
-    height: 700px;
+    height: 70%;
     width: 30vw;
     margin: 0 auto;
 }
@@ -42,15 +42,27 @@ body{
 }
 
 .login form{
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 }
 
+/* Campos e labels */
+
 .login form .campos{
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 10%;
     width: 100%;
     height: 40px;
+}
+
+.login form .campos-senhas{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.login form .campos-senhas .campo-senha{
+    width: 48%;
 }
 
 .login form label{
@@ -63,11 +75,7 @@ body{
     transition: .4s all ease-in-out;
 }
 
-
 .login form input:not(input[type="submit"]){
-    position: absolute;
-    bottom: 0;
-    left: 0;
     background: none;
     border-bottom: 2px solid #76767681;
     color: white;
@@ -75,6 +83,16 @@ body{
     width: 100%;
     height: 40px;
 }
+
+.login form .campos input{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+/* Botões */
 
 .login form #btnlogin, .login form #btnSing{
     background-color: #04A777;

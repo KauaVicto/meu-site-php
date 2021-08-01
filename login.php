@@ -71,13 +71,16 @@
                     <label for="loginSing" class="labellogin">Login</label>
                     <input type="text" name="loginSing" id="loginSing" class="inputs" value="<?= $loginSing ?>" autocomplete="off">
                 </div>
-                <div class="campos">
-                    <label for="senhaSing" class="labellogin">Senha</label>
-                    <input type="password" name="senhaSing" id="senhaSing" class="inputs">
-                </div>
-                <div class="campos">
-                    <label for="RsenhaSing" class="labellogin">Repita a Senha</label>
-                    <input type="password" name="RsenhaSing" id="RsenhaSing" class="inputs">
+                <div class="campos-senhas">
+                        <div class="campos campo-senha">
+                            <label for="senhaSing" class="labellogin">Senha</label>
+                            <input type="password" name="senhaSing" id="senhaSing" class="inputs">
+                        </div>
+
+                        <div class="campos campo-senha">
+                            <label for="RsenhaSing" class="labellogin">Repita a Senha</label>
+                            <input type="password" name="RsenhaSing" id="RsenhaSing" class="inputs">
+                        </div>
                 </div>
                 <input type="submit" id="btnSing" value="Sing Up" name="btn-cadastrar">
                 <?php if($errocadastro){ ?>
