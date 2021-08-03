@@ -1,6 +1,7 @@
 <?php
-    require_once "../includes/conectaBD.php";
+    require_once "../includes/conectaBD.php"; /* Conecta ao banco de dados */
 
+    /* Código SQL para criar a tabela usuário */
     $sql = "CREATE TABLE usuario (
         id INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(40),

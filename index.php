@@ -1,7 +1,8 @@
 <?php
     session_start();
-    define('PASTA', 'img/slide/');
+    define('PASTA', 'img/slide/'); /* Endereço da pasta */
 
+    /* Verifica se o usuário está logado ou não */
     if(!isset($_SESSION['logado']) || $_SESSION['logado'] == false){
         header("location: login.php");
     }
@@ -38,7 +39,7 @@
     <title>Rebb_Diit</title>
 </head>
 <body>
-    <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player> -->
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player>
     <header class="container">
         <div class="logo">
             <span>Rebb<br>Diit</span>
@@ -51,16 +52,14 @@
                         <li class="li li-pri"><a href="#servicos">SERVIÇOS</a></li>
                         <li class="li li-pri"><a href="#estudos">ESTUDOS</a></li>
                         <li class="li li-pri"><a href="#projetos">PROJETOS</a></li>
-                        <?php if($_SESSION['logado']){?>
-                            <li class="li li-pri menu-drop">
-                                <a href="#"><?= $_SESSION['login'] ?></a>
-                                <div class="submenu">
-                                    <ul>
-                                        <li class="li li-sec"><a href="login_sair.php">Sair</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        <?php } ?>
+                        <li class="li li-pri menu-drop">
+                            <a href="#"><?= $_SESSION['login'] ?></a>
+                            <div class="submenu">
+                                <ul>
+                                    <li class="li li-sec"><a href="login_sair.php">Sair</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
                 <div class="Tmenu">

@@ -3,6 +3,7 @@ session_start();
 
 require_once "config.php";
 
+/* Conecta ao banco de dados */
 $con = mysqli_connect(SERVIDOR, USUARIO, SENHA, BD);
 
 if(!$con){

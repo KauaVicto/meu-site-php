@@ -1,5 +1,7 @@
 <?php
     require_once "database/includes/conectaBD.php";
+
+    /* Salva os dados para não apagar dos campos */
     $errologin = '';
     $login = '';
     $errocadastro = '';
@@ -9,9 +11,9 @@
     $loginSing = '';
 
     if(isset($_POST['btn-login'])){
-        require_once "login_entrar.php";
+        require_once "login_entrar.php";/* Realiza o processo de login */
     }else if(isset($_POST['btn-cadastrar'])){
-        require_once "login_cadastrar.php";
+        require_once "login_cadastrar.php"; /* Realiza o processo de cadastro */
     }
 
 ?>
