@@ -1,6 +1,11 @@
 <?php
     session_start();
-    define('PASTA', 'img/slide/');
+    define('PASTA', 'img/slide/'); /* Endereço da pasta */
+
+    /* Verifica se o usuário está logado ou não */
+    if(!isset($_SESSION['logado']) || $_SESSION['logado'] == false){
+        header("location: login.php");
+    }
 
     /* variavel que Verifica a quantidade da primeira classe de imagens */
     $_SESSION['qt1class'] = 0;
@@ -30,11 +35,11 @@
     <meta http-equiv="X-UA-Compatible" content="OP=Opera">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <?php include('css/slide-style.php'); ?>
+    <?php include "css/style-slide.php" ?>
     <title>Rebb_Diit</title>
 </head>
 <body>
-    <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player> -->
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player>
     <header class="container">
         <div class="logo">
             <span>Rebb<br>Diit</span>
@@ -43,10 +48,18 @@
             <div class="menu">
                 <nav>
                     <ul>
-                        <li class="li"><a href="#home">HOME</a></li>
-                        <li class="li"><a href="#servicos">SERVIÇOS</a></li>
-                        <li class="li"><a href="#estudos">ESTUDOS</a></li>
-                        <li class="li"><a href="#projetos">PROJETOS</a></li>
+                        <li class="li li-pri"><a href="#home">HOME</a></li>
+                        <li class="li li-pri"><a href="#servicos">SERVIÇOS</a></li>
+                        <li class="li li-pri"><a href="#estudos">ESTUDOS</a></li>
+                        <li class="li li-pri"><a href="#projetos">PROJETOS</a></li>
+                        <li class="li li-pri menu-drop">
+                            <a href="#"><?= $_SESSION['login'] ?></a>
+                            <div class="submenu">
+                                <ul>
+                                    <li class="li li-sec"><a href="login_sair.php">Sair</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
                 <div class="Tmenu">
@@ -119,7 +132,7 @@
                     <nav class="menu-slide">
                         <ul>
                             <li class="list on">DESIGN</li>
-                            <li class="list">ESCOLAR</li>
+                            <li class="list">CURRICULAR</li>
                             <li class="list">WEB</li>
                         </ul>
                     </nav>
@@ -203,6 +216,6 @@
     <script src="js/script.js"></script>
     <script src="js/slide.js"></script>
     <script src="js/responsive.js"></script>
-    <!-- <script src="js/load.js"></script> -->
+    <script src="js/load.js"></script>
 </body>
 </html>

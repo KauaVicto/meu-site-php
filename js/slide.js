@@ -127,7 +127,7 @@ for (let i = 0; i < imgs.length; i++) {
         img.src = $(imgs[i]).attr("src")
 
         img.style.height = '80vh'
-        img.style.maxWidth = (i == 2) ? '80vh' : '100vw'
+        img.style.maxWidth = (i == 2 || i == 5) ? '80vh' : '100vw'
         img.style.objectFit = 'cover'
         img.style.position = 'fixed'
         img.style.top = '50%'
