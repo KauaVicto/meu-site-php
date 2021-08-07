@@ -47,6 +47,7 @@
                     <span>ou</span>
                 </div>
                 <div id="btngoogle">Google</div>
+                <a href="login_mudarsenha.php" class="mudarsenha">Esqueci a senha</a>
                 <?php if($errologin){ ?>
                     <div class="erro"><?=$errologin?></div>  
                 <?php } ?>             
