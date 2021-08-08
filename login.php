@@ -10,6 +10,8 @@
     $email = '';
     $loginSing = '';
 
+    unset($_SESSION['verificado']);
+
     if(isset($_POST['btn-login'])){
         require_once "login_entrar.php";/* Realiza o processo de login */
     }else if(isset($_POST['btn-cadastrar'])){
