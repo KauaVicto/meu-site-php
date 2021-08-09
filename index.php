@@ -39,7 +39,7 @@
     <title>Rebb_Diit</title>
 </head>
 <body>
-    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player>
+    <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player> -->
     <header class="container">
         <div class="logo">
             <span>Rebb<br>Diit</span>
@@ -106,7 +106,7 @@
             </div>
 
             <div class="container conteudo">
-                <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquid repellendus placeat doloremque perspiciatis quisquam. Assumenda atque numquam eius minima minus nihil aperiam harum in, quam, quidem, consequatur sit animi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit vero dolor earum cupiditate ipsa porro sit rerum adipisci odit voluptatum, et facilis est nesciunt eveniet soluta? Repellendus facilis aperiam in.</p>
+                <p class="texto">Estudo no IFBA realizando o curso integrado de informática, no momento estou bastante focado em Web Design, front-end, me especializando nas linguagens HTML, CSS e JavaScript, e estou iniciando agora em PHP, em banco de dados com a linguagem MySQL e em Java no modo conceitual. Já fiz um curso iniciante de Python, onde consegui pegar o básico da linguagem.</p>
 
                 <div class="linguagens">
                     <img src="img/javascript.png" alt="JavaScript">
@@ -124,7 +124,7 @@
             </div>
 
             <div class="container conteudo">
-                <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquid repellendus placeat doloremque perspiciatis quisquam. Assumenda atque numquam eius minima minus nihil aperiam harum in, quam, quidem, consequatur sit animi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit vero dolor earum cupiditate ipsa porro sit rerum adipisci odit voluptatum, et facilis est nesciunt eveniet soluta? Repellendus facilis aperiam in.</p>
+                <p class="texto">Esses são alguns dos projetos que desenvolvi. Fiz alguns trabalhos como designer, desenvolvi dois sites como projeto curricular e fiz alguns projetinhos web apenas para praticar. Fiz também um projeto em Python onde eu criei um bot que realiza comentários no instagram automaticamente.</p>
 
                 <div class="linha"></div>
 
