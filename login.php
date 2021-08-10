@@ -10,6 +10,8 @@
     $email = '';
     $loginSing = '';
 
+    unset($_SESSION['verificado']);
+
     if(isset($_POST['btn-login'])){
         require_once "login_entrar.php";/* Realiza o processo de login */
     }else if(isset($_POST['btn-cadastrar'])){
@@ -47,6 +49,7 @@
                     <span>ou</span>
                 </div>
                 <div id="btngoogle">Google</div>
+                <a href="login_mudarsenha.php" class="mudarsenha">Esqueci a senha</a>
                 <?php if($errologin){ ?>
                     <div class="erro"><?=$errologin?></div>  
                 <?php } ?>             
