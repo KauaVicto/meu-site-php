@@ -39,7 +39,7 @@
     <title>Rebb_Diit</title>
 </head>
 <body>
-    <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player> -->
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player>
     <header class="container">
         <div class="logo">
             <span>Rebb<br>Diit</span>
