@@ -2,11 +2,6 @@
     session_start();
     define('PASTA', 'img/slide/'); /* Endereço da pasta */
 
-    /* Verifica se o usuário está logado ou não */
-    if(!isset($_SESSION['logado']) || $_SESSION['logado'] == false){
-        header("location: login.php");
-    }
-
     /* variavel que Verifica a quantidade da primeira classe de imagens */
     $_SESSION['qt1class'] = 0;
     /* Le as imagens na pasta */
@@ -16,7 +11,7 @@
     /* Separa o nome de cada imagem para obter o nome da classe e conta a quantidade da primeira classe de imagens */
     $numClass = [];
     $class = [];
-    foreach($_SESSION['imgs'] as $i => $img){
+    foreach($_SESSION['imgs'] as $img){
         $classe = explode('-', $img);
         array_push($class, $classe[0]);
         array_push($numClass, $classe[1][0]);
@@ -39,7 +34,7 @@
     <title>Rebb_Diit</title>
 </head>
 <body>
-    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="1" loop controls autoplay id="loading"></lottie-player>
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="2" loop controls autoplay id="loading"></lottie-player>
     <header class="container">
         <div class="logo">
             <span>Rebb<br>Diit</span>
@@ -52,14 +47,18 @@
                         <li class="li li-pri"><a href="#servicos">SERVIÇOS</a></li>
                         <li class="li li-pri"><a href="#estudos">ESTUDOS</a></li>
                         <li class="li li-pri"><a href="#projetos">PROJETOS</a></li>
-                        <li class="li li-pri menu-drop">
-                            <a href="#"><?= $_SESSION['login'] ?></a>
-                            <div class="submenu">
-                                <ul>
-                                    <li class="li li-sec"><a href="login_sair.php">Sair</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        <?php if(!isset($_SESSION['logado'])){ /* Verifica se está logado ou não e altera o menu */?>
+                            <li class="li li-pri"><a href="login.php">Log in</a></li>
+                        <?php }else{ ?>
+                            <li class="li li-pri menu-drop">
+                                <a href="#"><?= $_SESSION['login'] ?></a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li class="li li-sec"><a href="login_sair.php">Sair</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </nav>
                 <div class="Tmenu">
@@ -141,8 +140,8 @@
                         <div class="proj">
                             <!-- botões -->
 
-                            <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
-                                <input type="radio" name="radio-btn" id="radio<?=$i?>" class="radio <?php if($numClass[$i-1][0] == 1){echo $class[$i-1];} ?>" <?php if($i == 1){echo "checked='true'";} ?> >
+                            <?php for($i = 0;$i < count($_SESSION['imgs']); $i++){ ?>
+                                <input type="radio" name="radio-btn" id="radio<?=$i+1?>" class="radio <?php if($numClass[$i][0] == 1){echo $class[$i];} ?>" <?php if($i == 1){echo "checked='true'";} ?> >
                             <?php } ?>
 
                             <!-- images -->

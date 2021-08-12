@@ -2,5 +2,5 @@
     session_start();
 
     /* Executa o sair */
-    $_SESSION['logado'] = false;
-    header("location: login.php");
+    unset($_SESSION['logado']);
+    header("location: index.php");
