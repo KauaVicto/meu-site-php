@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require_once "Classes/Imagem.php";
+
     define('PASTA', 'img/slide/'); /* Endereço da pasta */
 
     /* variavel que Verifica a quantidade da primeira classe de imagens */
@@ -7,19 +9,18 @@
     /* Le as imagens na pasta */
     $_SESSION['imgs'] = scandir(PASTA);
     array_splice($_SESSION['imgs'], 0, 2);
-
+    
     /* Separa o nome de cada imagem para obter o nome da classe e conta a quantidade da primeira classe de imagens */
-    $numClass = [];
-    $class = [];
-    foreach($_SESSION['imgs'] as $img){
-        $classe = explode('-', $img);
-        array_push($class, $classe[0]);
-        array_push($numClass, $classe[1][0]);
-        if($classe[0] == $class[0]){
+    $imagens = []; // Array que armazena os objetos de imagens
+    foreach($_SESSION['imgs'] as $src){
+        $img = explode('-', $src);
+        $idCat = $img[1][0];
+        $categoria = $img[0];
+        array_push($imagens, new Imagem($idCat, $categoria, PASTA.$src));
+        if($imagens[0]->getCategoria() == $categoria){
             $_SESSION['qt1class']++;
         }
     }
-    
 
 ?>
 
@@ -140,16 +141,17 @@
                         <div class="proj">
                             <!-- botões -->
 
-                            <?php for($i = 0;$i < count($_SESSION['imgs']); $i++){ ?>
-                                <input type="radio" name="radio-btn" id="radio<?=$i+1?>" class="radio <?php if($numClass[$i][0] == 1){echo $class[$i];} ?>" <?php if($i == 1){echo "checked='true'";} ?> >
+                            <?php foreach($imagens as $i => $img){ ?>
+                                <input type="radio" name="radio-btn" id="radio<?=$i+1?>" class="radio <?php if($img->getNum() == 1){echo $img->getCategoria();} ?>" <?php if($i == 0){echo "checked='true'";} ?> >
                             <?php } ?>
 
                             <!-- images -->
 
-                            <?php foreach($_SESSION['imgs'] as $i => $img){ ?>
+                            <?php foreach($imagens as $i => $img){ ?>
                                 <div class="img <?php if($i == 0){echo 'first';} ?>">
-                                    <img class="imgs <?= $class[$i] ?>" src="img/slide/<?= $img ?>" alt="estudos">
+                                    <img class="imgs <?= $img->getCategoria() ?>" src="<?= $img->getSrc() ?>" alt="estudos">
                                 </div>
+                                
                             <?php } ?>
 
                             <!-- navegação -->
