@@ -35,7 +35,7 @@
     <main class="container">
         <section class="login">
             <h1>Log in</h1>
-            <form action="login.php" method="post">
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 
                 <div class="campos">
                     <label for="login" class="labellogin">Login</label>
@@ -64,7 +64,7 @@
         <section class="login">
             <h1>Sing Up</h1>
 
-            <form action="login.php" method="post">
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 
                 <div class="campos">
                     <label for="nome" class="labellogin">Nome</label>

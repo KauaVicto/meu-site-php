@@ -60,7 +60,7 @@
 <body class="mudar-senha">
     <section class="login">
         <h1>Log in</h1>
-        <form action="login_mudarsenha.php" method="post">
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
             <?php if(!isset($_SESSION['verificado'])){ ?>
                 <div class="campos">
                     <label for="login" class="labellogin">Digite seu Login</label>
