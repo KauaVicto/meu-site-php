@@ -62,7 +62,7 @@
         <div class="separador"></div>
 
         <section class="login">
-            <h1>Sing Up</h1>
+            <h1>Sign Up</h1>
 
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 
@@ -75,21 +75,21 @@
                     <input type="email" name="email" id="email" class="inputs" value="<?= $email ?>" autocomplete="off">
                 </div>
                 <div class="campos">
-                    <label for="loginSing" class="labellogin">Login</label>
-                    <input type="text" name="loginSing" id="loginSing" class="inputs" value="<?= $loginSing ?>" autocomplete="off">
+                    <label for="loginSign" class="labellogin">Login</label>
+                    <input type="text" name="loginSign" id="loginSign" class="inputs" value="<?= $loginSign ?>" autocomplete="off">
                 </div>
                 <div class="campos-senhas">
                         <div class="campos campo-senha">
-                            <label for="senhaSing" class="labellogin">Senha</label>
-                            <input type="password" name="senhaSing" id="senhaSing" class="inputs">
+                            <label for="senhaSign" class="labellogin">Senha</label>
+                            <input type="password" name="senhaSign" id="senhaSign" class="inputs">
                         </div>
 
                         <div class="campos campo-senha">
-                            <label for="RsenhaSing" class="labellogin">Repita a Senha</label>
-                            <input type="password" name="RsenhaSing" id="RsenhaSing" class="inputs">
+                            <label for="RsenhaSign" class="labellogin">Repita a Senha</label>
+                            <input type="password" name="RsenhaSign" id="RsenhaSign" class="inputs">
                         </div>
                 </div>
-                <input type="submit" id="btnSing" value="Sing Up" name="btn-cadastrar">
+                <input type="submit" id="btnSing" value="Sign Up" name="btn-cadastrar">
                 <?php if($errocadastro){ ?>
                     <div class="erro"><?=$errocadastro?></div>  
                 <?php } ?>
