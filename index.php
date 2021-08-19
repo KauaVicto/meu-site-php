@@ -4,7 +4,7 @@
 
     define('PASTA', 'img/slide/'); /* Endereço da pasta */
 
-    /* variavel que Verifica a quantidade da primeira classe de imagens */
+    /* variável que Verifica a quantidade da primeira categoria de imagens */
     $_SESSION['qt1class'] = 0;
     /* Le as imagens na pasta */
     $_SESSION['imgs'] = scandir(PASTA);
