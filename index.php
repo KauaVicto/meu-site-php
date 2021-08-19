@@ -210,7 +210,7 @@
             </div>
         </div>
     </footer>
-    <input type="text" name="copiar" id="copiar">
+    <input type="text" name="copiar" id="copiar"> <!-- Imput para copiar as redes sociais -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

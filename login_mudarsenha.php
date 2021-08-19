@@ -74,6 +74,7 @@
                 <input type="submit" id="btnlogin" value="Verificar" name="btn-verificar">
             
             <?php }else{ ?>
+
                 <div class="campos">
                     <label for="pass" class="labellogin">Senha</label>
                     <input type="password" name="senha" id="pass" class="inputs">
@@ -83,6 +84,7 @@
                     <input type="password" name="repitasenha" id="Rpass" class="inputs">
                 </div>
                 <input type="submit" id="btnlogin" value="Alterar Senha" name="btn-mudarsenha">
+                
             <?php } ?>
 
             <?php if($erro){ ?>
