@@ -13,11 +13,11 @@
     unset($_SESSION['verificado']);
 
     if(isset($_POST['btn-login'])){
-        require_once "login_entrar.php"; /* Realiza o processo de login */
-	unset($_POST['btn-login']);
+        require "login_entrar.php"; /* Realiza o processo de login */
+        unset($_POST['btn-login']);
     }else if(isset($_POST['btn-cadastrar'])){
-        require_once "login_cadastrar.php"; /* Realiza o processo de cadastro */
-	unset($_POST['btn-cadastrar']);
+        require "login_cadastrar.php"; /* Realiza o processo de cadastro */
+	    unset($_POST['btn-cadastrar']);
     }
 
 ?>

@@ -9,24 +9,24 @@ const imgs = document.getElementsByClassName('imgs')
 const proj = document.getElementsByClassName('proj')
 
 
-tamsele('design', 0) /* inicializa na posição certa o agrupamento na navegação */
+tamSele('design', 0) /* inicializa na posição certa o agrupamento na navegação */
 
 /* Eventos de click no menu do slide */
 list[0].addEventListener('click', () => {
     designBtn()
-    tamsele('design')
+    tamSele('design')
     clickbtn('design')
 })
 
 list[1].addEventListener('click', () => {
     escolBtn()
-    tamsele('escolar')
+    tamSele('escolar')
     clickbtn('escolar')
 })
 
 list[2].addEventListener('click', () => {
     webBtn()
-    tamsele('web')
+    tamSele('web')
     clickbtn('web')
 })
 
@@ -59,7 +59,7 @@ function clickbtn(classe) {
 }
 
 /* Calcula o tamanho e a posição do agrupamento a depender da quantidade de imgs de cada classe */
-function tamsele(classe) {
+function tamSele(classe) {
     let qtimg = 0
     let elem1 = 0
 
@@ -83,13 +83,13 @@ for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener('click', () => {
         if ($(imgs[i]).hasClass("design")) { /* Verifica a classe da img atual e altera o agrupamento e o menu */
             designBtn()
-            tamsele('design')
+            tamSele('design')
         } else if ($(imgs[i]).hasClass("web")) {
             webBtn()
-            tamsele('web')
+            tamSele('web')
         } else if ($(imgs[i]).hasClass("escolar")) {
             escolBtn()
-            tamsele('escolar')
+            tamSele('escolar')
         }
         count = i
     })
@@ -102,13 +102,13 @@ setInterval(() => {
 
     if ($(imgs[count]).hasClass("design")) {
         designBtn()
-        tamsele('design')
+        tamSele('design')
     } else if ($(imgs[count]).hasClass("web")) {
         webBtn()
-        tamsele('web')
+        tamSele('web')
     } else if ($(imgs[count]).hasClass("escolar")) {
         escolBtn()
-        tamsele('escolar')
+        tamSele('escolar')
     }
     count++
 
