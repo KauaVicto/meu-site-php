@@ -21,12 +21,9 @@ html{
 }
 
 body{
-<<<<<<< Updated upstream
     background-image: url("../img/paisagem.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-=======
->>>>>>> Stashed changes
     min-height: 420vh;
     min-width: 100vw;
     overflow-x: hidden;
