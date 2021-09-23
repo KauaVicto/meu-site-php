@@ -31,11 +31,12 @@
     <meta http-equiv="X-UA-Compatible" content="OP=Opera">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
     <?php include "css/style-slide.php" ?>
     <title>Rebb_Diit</title>
 </head>
 <body>
-    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="2" loop controls autoplay id="loading"></lottie-player>
+    <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_e8Sg3j.json" background="rgba(0, 0, 0, 0.5)" speed="2" loop controls autoplay id="loading"></lottie-player> -->
     <header class="container">
         <div class="logo">
             <span>Rebb<br>Diit</span>
@@ -43,23 +44,23 @@
 
             <div class="menu">
                 <nav>
-                    <ul>
+                    <ul id="nav">
                         <li class="li li-pri"><a href="#home">HOME</a></li>
                         <li class="li li-pri"><a href="#servicos">SERVIÇOS</a></li>
                         <li class="li li-pri"><a href="#estudos">ESTUDOS</a></li>
                         <li class="li li-pri"><a href="#projetos">PROJETOS</a></li>
-                        <?php if(!isset($_SESSION['logado'])){ /* Verifica se está logado ou não e altera o menu */?>
-                            <li class="li li-pri"><a href="login.php">Log in</a></li>
-                        <?php }else{ ?>
-                            <li class="li li-pri menu-drop">
-                                <a href="#"><?= $_SESSION['login'] ?></a>
+                        <li class="li li-pri menu-drop login">
+                            <?php if(!isset($_SESSION['logado'])){ ?>
+                                <a href="login.php" id="btn-login">Log in</a>
+                            <?php }else{ ?>
+                                <a class="usuario" href="#"><?= $_SESSION['login'] ?></a>
                                 <div class="submenu">
                                     <ul>
                                         <li class="li li-sec"><a href="login_sair.php">Sair</a></li>
                                     </ul>
-                                </div>
-                            </li>
-                        <?php } ?>
+                                </div>  
+                            <?php } ?>
+                        </li>
                     </ul>
                 </nav>
                 <div class="Tmenu">
@@ -181,6 +182,73 @@
         </section>
     </main>
 
+    <div id="modal-container">
+        <div id="modal">
+            <a href="#" id="btn-fechar">X</a>
+            <main class="container">
+                <section class="login">
+                    <h1 class="headform">Log in</h1>
+                    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+
+                        <div class="campos">
+                            <label for="login" class="labellogin">Login</label>
+                            <input type="text" name="login" id="login" class="inputs" autocomplete="off">
+                        </div>
+                        
+                        <div class="campos">
+                            <label for="pass" class="labellogin">Senha</label>
+                            <input type="password" name="pass" id="pass" class="inputs">
+                        </div>
+                        <input type="submit" id="btnLogin" value="Log in" name="btn-login">
+                        <div class="oulogin">
+                            <span>ou</span>
+                        </div>
+                        <div id="btngoogle">Google</div>
+                        <a href="login_mudarsenha.php" class="mudarsenha">Esqueci a senha</a>
+                        <div class="msg-login"></div>          
+                    </form>
+
+                </section>
+
+                <div class="separador"></div>
+
+                <section class="login">
+                    <h1 class="headform">Sign Up</h1>
+
+                    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+
+                        <div class="campos">
+                            <label for="nome" class="labellogin">Nome</label>
+                            <input type="text" name="nome" id="nome" class="inputs" autocomplete="off">
+                        </div>
+                        <div class="campos">
+                            <label for="email" class="labellogin">Email</label>
+                            <input type="email" name="email" id="email" class="inputs" autocomplete="off">
+                        </div>
+                        <div class="campos">
+                            <label for="loginSign" class="labellogin">Login</label>
+                            <input type="text" name="loginSign" id="loginSign" class="inputs" autocomplete="off">
+                        </div>
+                        <div class="campos-senhas">
+                            <div class="campos campo-senha">
+                                <label for="senhaSign" class="labellogin">Senha</label>
+                                <input type="password" name="senhaSign" id="senhaSign" class="inputs">
+                            </div>
+
+                            <div class="campos campo-senha">
+                                <label for="RsenhaSign" class="labellogin">Repita a Senha</label>
+                                <input type="password" name="RsenhaSign" id="RsenhaSign" class="inputs">
+                            </div>
+                        </div>
+                        <input type="submit" id="btnSign" value="Sign Up" name="btn-cadastrar">
+
+                        <div class="msg-sign"></div>
+                    </form>
+                </section>
+            </main>
+        </div>                                    
+    </div>
+
     <footer class="rodape">
         <div class="texto">
             <span>Serei um programador</span>
@@ -212,9 +280,11 @@
     </footer>
     <input type="text" name="copiar" id="copiar"> <!-- Imput para copiar as redes sociais -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
     <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/ajax.js"></script>
     <script src="js/slide.js"></script>
     <script src="js/responsive.js"></script>
     <script src="js/load.js"></script>

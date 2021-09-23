@@ -1,10 +1,14 @@
 <?php
+    require_once "database/includes/conectaBD.php";
     /* Pega os dados inseridos pelo usuário */
     $nome = filter_input(INPUT_POST, 'nome');
     $email = filter_input(INPUT_POST, 'email');
     $loginSign = filter_input(INPUT_POST, 'loginSign');
     $senhaSign = filter_input(INPUT_POST, 'senhaSign');
     $RsenhaSign = filter_input(INPUT_POST, 'RsenhaSign');
+
+    $errocadastro = '';
+    $msg = '';
 
     /* Faz os testes dos campos */
     if($nome == ''){
@@ -54,4 +58,9 @@
         }
     }
 
-    
+    if($errocadastro != ''){
+        echo "<span style='background-color: #d41e1eec'>$errocadastro</span>";
+    }
+    if($msg != ''){
+        echo "<span style='background-color: #00b90f8c'>$msg</span>";
+    }

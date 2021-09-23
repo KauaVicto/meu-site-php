@@ -24,20 +24,20 @@ body.mudar-senha{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 .separador{
     width: 2px;
     background-color: #767676;
-    height: 70%;
+    height: 40%;
 }
 
 /* LOGIN */
 
 .login{
     height: 70%;
-    width: 30vw;
+    width: 40%;
     margin: 0 auto;
 }
 
@@ -58,7 +58,7 @@ body.mudar-senha{
 
 .login form .campos{
     position: relative;
-    margin-bottom: 10%;
+    margin: 5% 0;
     width: 100%;
     height: 40px;
 }
@@ -107,7 +107,7 @@ body.mudar-senha{
 
 /* Botões */
 
-.login form #btnlogin, .login form #btnSing{
+.login form #btnLogin, .login form #btnSign{
     background-color: #04A777;
     width: 100%;
     padding: 10px;
@@ -157,17 +157,14 @@ body.mudar-senha{
 
 /* MENSAGENS DE ERRO E DE SUCESSO */
 
-.login form .erro{
-    background-color: #d41e1eec;
-    margin: 20px 0;
-    padding: 5px;
-    border: 2px solid #ffffff4f;
-    border-radius: 5px;
-    color: white;
-    text-align: center;
-}
 .login form .msg{
-    background-color: #00b90f8c;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login form .msg span{
     margin: 20px 0;
     padding: 5px;
     border: 2px solid #aec0b24f;

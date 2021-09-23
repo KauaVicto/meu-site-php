@@ -36,3 +36,30 @@ wpp.addEventListener('click', function(){
         cwpp.style.opacity = '0'
     },1000);
 })
+
+/* Navegação suave na página */
+
+$('nav a:not([href="login.php"]):not([href="login_sair.php"])').click(function(e){
+    e.preventDefault();
+    var id = $(this).attr('href'),
+        targetOffset = $(id).offset()
+    $('html, body').animate({
+        scrollTop: targetOffset.top
+    }, 600)
+})
+
+/* Janela Modal */
+
+$('#btn-login').click(function(e){
+    e.preventDefault()
+    console.log(e.target.id)
+    $('#modal-container').addClass('on')
+})
+
+$('#modal-container').click(function(e){
+    e.preventDefault()
+    if(e.target.id == 'btn-fechar' || e.target.id == 'modal-container'){
+        $('#modal-container').removeClass('on')
+    }
+    
+})

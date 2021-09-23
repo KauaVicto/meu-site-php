@@ -1,14 +1,11 @@
 <?php
     require_once "database/includes/conectaBD.php";
-
     /* Salva os dados para não apagar dos campos */
     $errologin = '';
     $login = '';
-    $errocadastro = '';
-    $msg = '';
     $nome = '';
     $email = '';
-    $loginSing = '';
+    $loginSign = '';
 
     unset($_SESSION['verificado']);
 
@@ -79,27 +76,25 @@
                     <input type="text" name="loginSign" id="loginSign" class="inputs" value="<?= $loginSign ?>" autocomplete="off">
                 </div>
                 <div class="campos-senhas">
-                        <div class="campos campo-senha">
-                            <label for="senhaSign" class="labellogin">Senha</label>
-                            <input type="password" name="senhaSign" id="senhaSign" class="inputs">
-                        </div>
+                    <div class="campos campo-senha">
+                        <label for="senhaSign" class="labellogin">Senha</label>
+                        <input type="password" name="senhaSign" id="senhaSign" class="inputs">
+                    </div>
 
-                        <div class="campos campo-senha">
-                            <label for="RsenhaSign" class="labellogin">Repita a Senha</label>
-                            <input type="password" name="RsenhaSign" id="RsenhaSign" class="inputs">
-                        </div>
+                    <div class="campos campo-senha">
+                        <label for="RsenhaSign" class="labellogin">Repita a Senha</label>
+                        <input type="password" name="RsenhaSign" id="RsenhaSign" class="inputs">
+                    </div>
                 </div>
-                <input type="submit" id="btnSing" value="Sign Up" name="btn-cadastrar">
-                <?php if($errocadastro){ ?>
-                    <div class="erro"><?=$errocadastro?></div>  
-                <?php } ?>
-                <?php if($msg){ ?>
-                    <div class="msg"><?=$msg?></div>  
-                <?php } ?>  
+                <input type="submit" id="btnSign" value="Sign Up" name="btn-cadastrar">
+
+                <div class="msg"></div>
             </form>
         </section>
     </main>
 
+    <script src="js/jquery.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/ajax.js"></script>
 </body>
 </html>

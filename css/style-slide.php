@@ -53,7 +53,7 @@
 }
 
 .proj{
-    width: <?= 100 * count($_SESSION['imgs']) ?>%; /* Pega a quantidade de imgs e multiplica por 100 para definir o tamanho do slide em % */
+    width: <?= 100 * count($_SESSION['imgs']).'%' ?>; /* Pega a quantidade de imgs e multiplica por 100 para definir o tamanho do slide em % */
     height: 100%;
     display: flex;
     position: relative;
@@ -64,7 +64,7 @@
 }
 
 .proj .img{
-    width: <?= $qtImg ?>%; /* Pega x% do tamanho inteiro do slide para cada img a depender da quantidade delas */
+    width: <?= "$qtImg%" ?>; /* Pega x% do tamanho inteiro do slide para cada img a depender da quantidade delas */
     transition: 1s all ease;
     margin-bottom: 20px;
 }
@@ -82,14 +82,14 @@
 .btns{
     position: absolute;
     bottom: 10px;
-    width: <?= $qtImg ?>%; /* Pega x% do tamanho inteiro do slide para a navegação inferior a depender da quantidade de imgs */
+    width: <?= "$qtImg%" ?>; /* Pega x% do tamanho inteiro do slide para a navegação inferior a depender da quantidade de imgs */
     height: 28px;
     margin-top: 20px;
 }
 
 .manual{
     position: relative;
-    width: <?= $qtImg ?>%; /* Pega x% do tamanho inteiro do slide para a navegação inferior a depender da quantidade de imgs */
+    width: <?= "$qtImg%" ?>; /* Pega x% do tamanho inteiro do slide para a navegação inferior a depender da quantidade de imgs */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -126,7 +126,7 @@
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .first{
-        margin-left: <?= -$qtImg * ($i - 1) ?>%;
+        margin-left: <?= -$qtImg * ($i - 1) ?>%
     }
 
 <?php } ?>
@@ -154,9 +154,11 @@
 <?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .btns .navegacao <?= ".auto-btn$i"?> {
-        background-color: #FFFFFF;
+        background-color: #FFFFFF
     }
 <?php } ?>
+
+
 
 /* RESPONSIVIDADE */
 

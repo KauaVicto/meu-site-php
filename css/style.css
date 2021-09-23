@@ -11,7 +11,7 @@
 
 html{
     font-size: 62.5%;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     overflow-x: hidden;
 }
 
@@ -95,6 +95,7 @@ header.container{
 .container .menu nav ul .li::after{
     content: "";
     position: absolute;
+    margin: 0 auto;
     bottom: 0;
     height: 2px;
     width: 0;
@@ -153,7 +154,7 @@ main{
     width: 100%;
 }
 
-main h1{
+main h1:not(h1[class="headform"]){
     font-family: 'Poppins', sans-serif;
     font-size: 5rem;
     text-align: center;
@@ -439,6 +440,60 @@ main .projetos .linha{
     border: 1px solid white;
     transition: .3s all ease-in-out;
 }
+
+/* JANELA MODAL */
+
+@keyframes modal{
+    from{
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+#modal-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.37);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+#modal-container.on{
+    display: flex;
+}
+#modal{
+    position: relative;
+    width: max(70%, 800px);
+    height: max(70%, 500px);
+    border: 1px solid white;
+    background-color: #0D1F2D;
+    animation: modal .3s;
+}
+#btn-fechar{
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #092B45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* RESPONSIVIDADE */
 
 @media (max-width: 1400px) {
     header.container .menu nav ul li a{
