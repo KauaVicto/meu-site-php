@@ -1,6 +1,6 @@
 <?php
 
-    $qtImg = 100 / count($_SESSION['imgs']); /* Define de quanto em quanto % a img irá rolar */
+    $qtImg = 100 / $_SESSION['qtimgs']; /* Define de quanto em quanto % a img irá rolar */
 
 ?>
 
@@ -53,7 +53,7 @@
 }
 
 .proj{
-    width: <?= 100 * count($_SESSION['imgs']).'%' ?>; /* Pega a quantidade de imgs e multiplica por 100 para definir o tamanho do slide em % */
+    width: <?= 100 * $_SESSION['qtimgs'].'%' ?>; /* Pega a quantidade de imgs e multiplica por 100 para definir o tamanho do slide em % */
     height: 100%;
     display: flex;
     position: relative;
@@ -123,7 +123,7 @@
 }
 
 /* Verifica qual img está selecionada e modifica o margin-left */
-<?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
+<?php for($i = 1; $i <= $_SESSION['qtimgs']; $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .first{
         margin-left: <?= -$qtImg * ($i - 1) ?>%
@@ -151,7 +151,7 @@
 }
 
 /* Deixa marcado o botão inferior que está selecionado */
-<?php for($i = 1; $i <= count($_SESSION['imgs']); $i++){ ?>
+<?php for($i = 1; $i <= $_SESSION['qtimgs']; $i++){ ?>
 
     .proj <?="#radio$i"?>:checked ~ .btns .navegacao <?= ".auto-btn$i"?> {
         background-color: #FFFFFF

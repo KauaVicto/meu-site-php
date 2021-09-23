@@ -7,12 +7,13 @@
     /* variável que Verifica a quantidade da primeira categoria de imagens */
     $_SESSION['qt1class'] = 0;
     /* Le as imagens na pasta */
-    $_SESSION['imgs'] = scandir(PASTA);
-    array_splice($_SESSION['imgs'], 0, 2);
+    $imgs = scandir(PASTA);
+    array_splice($imgs, 0, 2);
+    $_SESSION['qtimgs'] = count($imgs);
     
     /* Separa o nome de cada imagem para obter o nome da classe e conta a quantidade da primeira classe de imagens */
     $imagens = []; // Array que armazena os objetos de imagens
-    foreach($_SESSION['imgs'] as $src){
+    foreach($imgs as $src){
         $img = explode('-', $src);
         $idCat = $img[1][0];
         $categoria = $img[0];
@@ -161,14 +162,14 @@
                             <div class="btns">
                                 <!-- Automática nav -->
                                 <div class="navegacao">
-                                    <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
+                                    <?php for($i = 1;$i <= $_SESSION['qtimgs']; $i++){ ?>
                                         <div class="auto-btn<?=$i?>"></div>
                                     <?php } ?>
                                 </div>
                                 <!-- manual nav -->
                                 <div class="manual">
                                     <div id="sele"></div>
-                                    <?php for($i = 1;$i <= count($_SESSION['imgs']); $i++){ ?>
+                                    <?php for($i = 1;$i <= $_SESSION['qtimgs']; $i++){ ?>
                                         <label for="radio<?=$i?>" class="manual-btn"></label>
                                     <?php } ?>
                                 </div>
