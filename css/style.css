@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,100&family=Poppins:wght@100;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
+:root{
+    --cor-head: #0D1F2D;
+    --alt-head: 120px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -35,8 +40,8 @@ body{
 
 header.container{
     width: 100vw;
-    height: 20vh;
-    background-color: #0D1F2D;
+    height: var(--alt-head);
+    background-color: var(--cor-head);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +65,6 @@ header.container{
     padding: 20px;
     border-radius: 10px;
     width: auto;
-    position: fixed;
     margin-right: 6rem;
     right: 0;
     z-index: 20;
@@ -556,42 +560,27 @@ main .projetos .linha{
         transition: .3s all ease-in-out;
     }
 
-    .menu.on{
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 25vw;
-        height: 25vh;
-        overflow-x: hidden;
-        margin-right: 0;
-    }
-
     .menu.on nav{
         display: block;
-        height: 100%;
-        width: auto;
+        position: absolute;
+        background-color: var(--cor-head);
+        right: 0;
+        top: var(--alt-head);
+        height: 310px;
+        width: 200px;
     }
 
     .menu.on nav ul{
         position: absolute;
         flex-direction: column;
-        justify-content: space-around;
-        height: 25vh;
-        width: auto;
+        height: 100%;
+        width: 200px;
         left: 50%;
         transform: translate(-50%);
-        bottom: 0;
-        margin-bottom: 10px;
     }
 
     .menu.on nav ul li a{
         transition: .3s all ease-in-out;
-    }
-
-    .menu.on .Tmenu{
-        position: absolute;
-        right: 20px;
-        top: 20px;
     }
 
     .menu.on .Tmenu .um{

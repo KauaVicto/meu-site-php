@@ -43,6 +43,11 @@
         </div>
 
             <div class="menu">
+                <div class="Tmenu">
+                    <div class="um"></div>
+                    <div class="dois"></div>
+                    <div class="tres"></div>
+                </div>
                 <nav>
                     <ul id="nav">
                         <li class="li li-pri"><a href="#home">HOME</a></li>
@@ -63,11 +68,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="Tmenu">
-                    <div class="um"></div>
-                    <div class="dois"></div>
-                    <div class="tres"></div>
-                </div>
+                
             </div>
         
     </header>
